@@ -1,0 +1,290 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Box</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+
+</head>
+<header>
+    {% include 'header.html' %}
+</header>
+
+<style>
+    form{
+        padding:20px;
+    }
+    h1 {
+        gap: 20px;
+    }
+
+    .u {
+
+        margin-top: 50px;
+        margin-left: 100px;
+        font-size: 30PX;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    .username {
+        font-weight: bold;
+        color: #b71717;
+    }
+
+    .stars {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+    }
+
+    .one {
+        background-image: url("a.jpeg");
+        background-size: cover;
+        height: 4000PX;
+        width: 100%;
+      
+    }
+
+    .review-box {
+        display: none;
+        padding: 10px;
+        border: 1px solid #151515;
+        margin-top: 10px;
+        width: 50%;
+        background-color: rgb(201, 85, 172);
+        margin-left: 100px;
+       
+    }
+
+
+
+    .reviews-container {
+        margin-top: 20px;
+    }
+
+    .review-item {
+        border: 1px solid #ea1515;
+        padding: 5px;
+        margin-bottom: 5px;
+        width: 50%;
+        background-color: hsl(156, 56%, 98%);
+        font-size: 20px;
+        color: rgb(18, 18, 18);
+        align-items: center;
+        margin-left: 100px;
+        
+    }
+
+    .review-item p {
+        margin: 5px 0;
+        font-size: 30px;
+    }
+
+    .stars img {
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+    }
+
+    button {
+        color: red;
+        background-color: rgb(40, 173, 244);
+        font-size: 30px;
+        border: 1px solid black;
+    }
+
+    .g {
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    .submit {
+        margin-left: 50px;
+        margin-top: -50px;
+    }
+
+    p {
+        font-size: 20px;
+    }
+    .d{
+        font-size: 40px;
+        font-family:'Times New Roman', Times, serif;
+        color: white;
+    }
+
+.my-form {
+    width: 500px; 
+    font-family: 'Times New Roman', Times, serif;
+    padding: 20px;
+    margin:90px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    font-size:23px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group textarea {
+    width: calc(100% - 12px);
+    padding: 8px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.submit-button {
+
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+.r{
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+}
+.s{
+   font-family: 'Times New Roman', Times, serif;
+}
+.c{
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+   
+}
+.l
+{
+    color: red;
+}
+
+
+    .star-rating {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        
+    }
+
+   
+
+    .star-rating label {
+        margin: 0 5px;
+        cursor: pointer;
+        color: #0056b3;
+        font-size: 25px; 
+    }
+
+    .star-rating input[type="radio"]:checked + label {
+        color: red; 
+      
+
+    }
+  
+  
+</style>
+</head>
+
+<body>
+    <div class="one">
+        <h1 class="d">Star Songs</h1>
+
+        <button id="showReview" class="u"> Review for songs</button>
+
+  
+        <form method="post" class="my-form">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="id_username">Username:</label>
+                {{ form.username }}
+            </div>
+            <div class="form-group">
+                <label for="id_stars">Stars:</label>
+                <div class="star-rating">
+                    <input type="radio" id="star1" name="stars" value="1">
+                    <label for="star1">1</label>
+                    
+                    <input type="radio" id="star2" name="stars" value="2">
+                    <label for="star2">2</label>
+                    <input type="radio" id="star3" name="stars" value="3">
+                    <label for="star3">3</label>
+                    <input type="radio" id="star4" name="stars" value="4">
+                    <label for="star4">4</label>
+                    <input type="radio" id="star5" name="stars" value="5">
+                    <label for="star5">5</label>
+                </div>
+            </div> 
+           
+            <div class="form-group">
+                <label for="id_reviews">Reviews:</label>
+                {{ form.reviews }}
+            </div>
+            <button type="submit" class="submit-button">Submit</button>    
+        </form>
+        
+
+        
+        <script>
+            document.getElementById('myForm').addEventListener('submit', function () {
+                location.reload();
+            });
+        </script>
+
+       <h1 class="s"> Section to display reviews</h1>
+        <div class="reviews-container">
+            <h2 class="r">Reviews</h2>
+            {% for i in ca %}
+            <div class="review-item">
+                <div class="c">
+                <p class="l">Username</p>:<p>{{ i.username }}</p>
+                </div>
+                <div class="c">
+                <p class="l">Stars</p>:<p> {{ i.stars }}</p>
+                </div>
+                <div class="c">
+                <p class="l">Review</p>:<p>{{ i.reviews }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+
+</body>
+<footer>
+    {% include 'footer.html' %}
+</footer>
+
+</html>

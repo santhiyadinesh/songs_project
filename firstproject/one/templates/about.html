@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+</head>
+<header>
+    {% include 'header.html' %}
+</header>
+<body> 
+    <div class="one">
+        <p class="p">About us</p>
+        <p class="q">Mission and Team</p>
+        <img  class="j" src="sss.png" width="200" height="200">
+        <p class="z">We faster music creation and enrich</p>
+        <p class="q">music experiences.</p>
+   
+    <div class="two">
+        <p class="r">Our Mission</p>
+        <p class="t">Easy Song's mission is to foster music creation and enrich music experiences. We accomplish this by combining amazing people with outstanding technology. Our recipe for success is our spirit of humility, constant improvement, and entrepreneurship. We believe life sounds better when artists thrive</p>
+    </div>
+    
+    <div class="two">
+        <p class="r">Our Team</p>
+        <p class="t">We take great pride in our amazing customer service. When you call, a real person answers the phone right away. These are the special individuals who answer the call day in and day out to make music easier for everyone.</p>
+    </div>
+    <div class="two">
+        <p class="r">Indie music roots</p>
+        <p class="t">In 2005, we started out as a mobile recording service for churches, schools, and community groups. We produced quality albums, affordably. We knew we wanted to do things legally, and that meant clearing permission for the cover songs we produced.</p>
+    </div>
+    <div class="two">
+        <p class="r">Rebrand to Star Song</p>
+        <p class="t">In 2021 we dropped "licensing" from our name because it no longer described the scope of our expanded offerings, which now included publishing administration, music business support services, copyright registration, music clearances for any use, digital reporting services for publishers, backing track services, and a web API for partners.</p>
+    </div>
+    <div class="two">
+        <p class="r">Affecting positive change</p>
+        <p class="t">Today, we serve over 184,000 happy customers and deliver millions of dollars in royalties each year. We are proud of the changes we have brought to the music industry, including lower minimum quantities, the ability to license any song, and fast, friendly customer service.".</p>
+    </div>
+    </div>
+    
+    
+</body>
+</html>
+<footer>
+    {% include 'footer.html' %}
+</footer>
+<style>
+    .t
+    {
+        color:black;
+        font-size: 40px;
+        margin-left: 300px;
+        font-family: 'Times New Roman', Times, serif;
+        
+    }
+    .one
+    {
+        background-image: url("y.jpg");
+        background-size: cover;
+
+        height: 3000PX;
+        width: 100%;
+
+    }
+    .p
+    {
+        color: white;
+        font-size: 50px;
+        padding:50px;
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .j
+    {
+        margin-left: 800px;
+        
+    }
+    .q
+    {
+        color: hwb(259 5% 21%);
+        font-size: 50px;
+        font-family: 'Times New Roman', Times, serif;
+        text-align: center;
+
+    }
+    .z{
+        
+   
+        color:red;
+        font-size: 50px;
+        font-family: 'Times New Roman', Times, serif;
+        text-align: center;
+
+    }
+  
+    .r
+    {
+        margin-left: 100px;
+        font-size: 50px;
+        color: white;
+        padding: 20px;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .two{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 30px;
+    }
+</style>

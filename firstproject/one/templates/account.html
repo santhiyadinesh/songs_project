@@ -1,0 +1,136 @@
+<div class="one">
+    <img src="star.jpeg" width="50" height="50">
+    <p>StarSongs</p>
+    <h1 class="two">Create an Account</h1>
+
+
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="First Name" placeholder=" Enter First Name">
+        <input type="Last Name" placeholder="Enter last Name">
+        <input type="Email Address" placeholder="Enter the Email Address">
+        <input type="New password" placeholder=" New password">
+       
+        <p class="three">At least 8 character</p>
+        <p class="t">At least one lowercase letter</p>
+        <p class="h">At least one UPPERCASE letter</p>
+        <p class="r">At least one special character(@#$^&)</p>
+        <p>By creating an account you agree to Staar Song Terms of use and privacy policy</p>
+        
+   
+        <a href="{% url 'a' %}" class="blue">Continue</a>
+
+        <p class="four">Already have an account? <a href="{% url 'b'%}">sigin</a></p>
+        
+    </form>
+
+</div>
+
+
+
+<style>
+    .one {
+        background-color: rgb(104, 221, 213);
+        height: 900px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+
+    }
+
+    .two {
+        margin-left: 600px;
+        text-align: center;
+        margin-top: 150px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    img {
+        margin-left: 30px;
+        margin-top: 30px;
+    }
+
+    p {
+        margin-top: 30px;
+        color: white;
+        font-size: 20px;
+    }
+
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    form {
+        margin-top: 200px;
+        margin-left: -400px;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border: 1px solid black;
+        width: 30%;
+        height: 700px;
+    }
+
+    input {
+        width: 70%;
+        align-items: center;
+        height: 40px;
+        padding: 20px;
+        margin-left: 10px;
+        gap:20px;
+        
+    }
+
+    .blue {
+        background-color: blue;
+        text-align: center;
+        color: white;
+        font-size: 20px;
+        border:1px solid black;
+        text-decoration: none;
+        padding:10px;
+    }
+
+    .three {
+        font-size: 20px;
+        color: rgb(21, 20, 20);
+        margin-left:-220px;
+       
+    }
+    .t
+    {
+        font-size: 20px;
+        color: rgb(21, 20, 20);
+        margin-left:-150px; 
+        margin-top: -10px;
+    }
+  
+        .h
+    {
+        font-size: 20px;
+        color: rgb(21, 20, 20);
+        margin-left:-120px; 
+        margin-top: -10px;
+    }
+    .r
+    {
+        font-size: 20px;
+        color: rgb(21, 20, 20);
+        margin-left:-70px; 
+        margin-top: -10px;
+    }
+    
+
+    .four {
+        font-size: 20px;
+        color: rgb(21, 20, 20);
+        margin-left: 40px;
+
+    }
+</style>

@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<header>
+    {% include 'header.html' %}
+</header>
+
+<body>
+
+    <div class="one">
+        <p class="r">Review/Songs</p>
+        <h1 class="two">Reviews</h1>
+        <h2 class="three">here, you come first</h2>
+        <img class="a" src="rate.jpg">
+        <img class="b" src="rate2.jpg">
+    </div>
+    <div class="rate">
+        <img class="t" src="OIP.jpeg">
+        <p class="four">5.0</p>
+        <p class="five">rating out of 416 reviews</p>
+        <div class="star">
+            <div class="m">
+                <img src="55.png" width="250" height="80">
+                <p class="n">-------------------------------100%</p>
+            </div>
+            <div class="m">
+                <img src="four.png" width="250" height="80">
+                <p class="n">-------------------------------20%</p>
+            </div>
+            <div class="m">
+                <img src="three.png" width="250" height="80">
+                <p class="n">-------------------------------10%</p>
+            </div>
+            <div class="m">
+                <img src="two.png" width="250" height="80">
+                <p class="n">-------------------------------5%</p>
+            </div>
+            <div class="m">
+                <img src="one.jpeg" width="250" height="80">
+                <p class="n">-------------------------------2%</p>
+            </div>
+            <div class="m">
+                <img src="zero.png" width="250" height="80">
+                <p class="n">-------------------------------0%</p>
+
+            </div>
+        </div>
+</div>
+        
+</body>
+</html>
+<footer>
+   {% include 'footer.html' %}
+</footer>
+
+<style>
+   
+    .r{
+        font-size: 40px;
+        color: red;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    h4 {
+        margin-left: 20px;
+    }
+
+    .b {
+        color: black;
+        margin-left: -60px;
+    }
+
+    .p {
+        display: flex;
+        flex-direction: row;
+        padding: 40px;
+        margin-left: -40px;
+    }
+
+    .m {
+        display: flex;
+        flex-direction: row;
+        margin-left: 100px;
+        
+    }
+
+    .n {
+        margin-left: 100px;
+        margin-top: 10px;
+        color: black;
+        font-size: 20px;
+    }
+
+    .t {
+        margin-left: 800px;
+    }
+
+
+    .one {
+
+        background-image: url("a.jpeg");
+        background-size: cover;
+        height: 1000PX;
+        width: 100%;
+
+    }
+
+    .two {
+        color: rgb(244, 11, 11);
+        text-shadow: 0dvw;
+        font-size: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .three {
+
+        padding: 40px;
+        color: white;
+        text-shadow: 0dvw;
+        font-size: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    .a {
+
+        margin-left: 600px;
+    }
+
+    .b {
+        margin-left: 200px;
+    }
+
+    .four {
+        color: rgb(221, 44, 44);
+        margin-left: 850px;
+        padding: 50px;
+        font-size: 80px;
+
+    }
+
+    .five {
+        color: rgb(235, 26, 26);
+        font-size: 40px;
+        margin-left: 800px;
+        margin-top: -30px;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    .star {
+        margin-left: 550px;
+        display: flex;
+        flex-direction: column;
+        border:1px solid black;
+        padding: 10px;
+        width:50%;
+        background-color:white;
+        margin-top: -20px;
+       
+    }
+</style>

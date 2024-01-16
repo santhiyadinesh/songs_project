@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+   
+</head>
+<header>
+    {% include 'header.html' %}
+</header>
+
+<body>
+    <div class="one">
+        <h1 class="o">Clear Music Rights for Any Use</h1>
+        <h1 class="n">Get Permission</h1>
+        <div class="main">
+            {% for i in ab %}
+
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="/home/{{i.images}}" width="300" height="200">
+                <div class="card-body">
+                    <h5 class="title">Title: {{i.name}}</h5>
+                    <p class="card-text">Music: Anirudh Ravichandran</p>
+                    <p class="card-text">Director:Lokesh Kanakaraj</p>
+                    <p class="card-text">language: Tamil</p>
+                    <p class="card-text">Year:2023</p>
+                    <p class="card-text">song-name:{{i.name}}</p>
+                   <a href="{% url 'song' i.name %}" class="btn btn-primary">Play Song</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+
+    </div>
+
+</body>
+<footer>
+    {% include 'footer.html' %}
+</footer>
+
+</html>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .card-body{
+        font-size: 20px;
+        font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+    .one {
+        background-image: url("h.jpg");
+        background-size: cover;
+        height: 2500PX;
+        width: 100%;
+
+    }
+
+    .o {
+        color: white;
+        margin-left: 600px;
+        padding: 100px;
+        height: 500px;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 40px;
+
+    }
+
+    .n {
+
+        color: white;
+        margin-top: -300px;
+        margin-left: 800px;
+        padding: 30px;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 40px;
+
+    }
+
+    .title {
+        width: 500px;
+        color: red;
+    }
+
+    .card {
+
+        border: 1px solid black;
+
+    }
+
+    .main {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 150px;
+        height: 800px;
+        flex-wrap: wrap;
+    }
+  
+</style>

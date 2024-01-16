@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<header>
+    {% include 'header.html' %}
+</header>
+
+<body>
+
+    {% block content %}
+
+
+    <div class="min">
+
+        <h1>Songs Review</h1>
+
+
+        <div class="a">
+
+            <img src="/home/{{ca.images}}" height="600" width="600">
+        </div>
+        <div class="b">
+            <div class="z">
+                <p class="l">Name</p>:<p>{{ca.name}}</p>
+            </div>
+            <div class="z">
+                <p class="l">Year</p>:<p>{{ca.year}}</p>
+            </div>
+            <div class="z">
+                <p class="l">Music</p>:<p>{{ca.music}}</p>
+            </div>
+            <div class="z">
+                <p class="l">Director
+                <p>:</p>{{ca.director}}</p>
+            </div>
+            <div class="z">
+                <p class="l">Language
+                <p>:</p>{{ca.Language}}</p>
+            </div>
+            <div class="audio">
+                <p class="s">audio song</p>
+                <div class="audio-player">
+                <audio controls>
+                    <source src="/home/{{ ca.audio }}" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+            <button><a href="{% url 'p' %}">Read Reviews</a></button>
+        </div>
+
+        </div>
+
+
+
+
+    </div>
+
+    {% endblock %}
+</body>
+
+
+<footer>
+    {% include 'footer.html' %}
+</footer>
+
+
+</html>
+<style>
+    
+    .audio
+    {
+       
+            text-align: center;
+            max-width: 400px;
+            padding: 20px;
+            background-color: rgb(99, 131, 201);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top:-20px;
+            margin-left: 100px;
+        }   
+
+    
+    .audio-player
+    {
+        margin-bottom: 20px;
+       
+       
+    }
+    .s
+    {
+        margin-left:20px;
+        color: red;
+    }
+    h1 {
+        color: white;
+        margin-left: 100px;
+        margin-top: 30px;
+    }
+
+    button {
+        color: red;
+        background-color: rgb(31, 31, 214);
+        font-size: 30px;
+        border: 1px solid black;
+        margin-left: -10px;
+        margin-top: 10px;
+    }
+
+    .a {
+
+        height: 800px;
+        display: flex;
+        flex-direction: row;
+        margin-left: 100px;
+        margin-top: 100px;
+
+
+    }
+
+    .l {
+        color: rgb(232, 24, 24);
+
+    }
+
+    .z {
+        display: flex;
+        flex-direction: row;
+        margin-left: 140px;
+
+
+    }
+
+    .min {
+        border: 2px solid black;
+
+        background-color: rgb(243, 224, 240);
+        background-image: url("h.jpg");
+        background-size: cover;
+        height: 2200PX;
+        width: 100%;
+
+    }
+
+    .b {
+
+        display: flex;
+        flex-direction: column;
+        margin-left: 900px;
+        gap: 20px;
+        font-size: 30px;
+        margin-top: -800px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        border: 2px solid rgb(216, 23, 23);
+        background-color: white;
+        /* align-items: center; */
+        width: 40%;
+        height: 700px;
+        padding: 60px;
+
+
+
+    }
+
+    .p {
+        display: flex;
+        flex-direction: row;
+        color: rgb(255, 0, 179);
+
+    }
+
+    a {
+        color: rgb(0, 195, 255);
+        text-decoration: none;
+    }
+
+    button {
+        color: aqua;
+        background-color: rgb(238, 15, 108);
+        border: 1px solid black;
+    }
+</style>

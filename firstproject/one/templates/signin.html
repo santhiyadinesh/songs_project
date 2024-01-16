@@ -1,0 +1,122 @@
+<div class="one">
+    <img src="star.jpeg" width="50" height="50">
+    <p>StarSongs</p>
+    <h1 class="two">Sign in</h1>
+
+
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="Email address" placeholder=" Enter Emailaddress">
+        <input type="Password" placeholder="Enter Password">
+        <p class="three">Remember my email address</p>
+   
+        
+   
+        <a href="{% url 'a' %}" class="blue">signin</a>
+        <p class="four">New here? <a href="{% url 'g'%}">Create an account</p></a>
+        <p class="four">Need password help?</p>
+    </form>
+
+</div>
+
+
+<!-- {% block content %}
+<form method="post" class="xd">
+
+    {% csrf_token %}
+    {{form}}
+    <div class="all">
+    <label>Username</label>
+
+    <input type = "text" name="username">
+ 
+    <label>password</label>
+    <input type ="password" name="password">
+    <input type="submit" value="login" class="lg">
+   </div>
+</form>
+{% endblock %} -->
+
+
+
+<style>
+    .one {
+        background-color: rgb(104, 221, 213);
+        height: 900px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+
+    }
+
+    .two {
+        margin-left: 600px;
+        text-align: center;
+        margin-top: 150px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    img {
+        margin-left: 30px;
+        margin-top: 30px;
+    }
+
+    p {
+        margin-top: 30px;
+        color: white;
+        font-size: 20px;
+    }
+
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    form {
+        margin-top: 200px;
+        margin-left: -300px;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border: 1px solid black;
+        width: 30%;
+        height: 500px;
+    }
+
+    input {
+        width: 70%;
+        align-items: center;
+        height: 40px;
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .blue {
+        background-color: blue;
+        text-align: center;
+        color: white;
+        font-size: 20px;
+        border: 1px solid black;
+        padding:10px;
+        text-decoration: none;
+        margin-top: 50px;
+    }
+
+    .three {
+        font-size: 20px;
+        color: rgb(21, 20, 20);
+        margin-left: 130px;
+    }
+
+    .four {
+        font-size: 20px;
+        color: rgb(21, 20, 20);
+        margin-left: 40px;
+
+    }
+</style>

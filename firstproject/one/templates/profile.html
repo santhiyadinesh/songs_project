@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>User Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: lightpink;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+
+
+        .my-form {
+            width: 550px;
+            font-family: 'Times New Roman', Times, serif;
+            padding: 20px;
+            margin-left: 200px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            margin-top: 100px;
+        }
+
+        .profile-form label {
+            font-size: 23px;
+            color: red;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+
+
+        .review-item {
+            background-color: whitesmoke;
+            padding: 30px;
+            border: 1px solid black;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-item .a {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .review-item h4 {
+            font-size: 24px;
+            color: red;
+        }
+
+        .review-item h5 {
+            font-size: 20px;
+        }
+
+        .review-item {
+            border: 1px solid black;
+            width: 30%;
+            background-color: whitesmoke;
+            padding: 40px;
+           
+        }
+
+        body {
+            background-color: lightpink;
+            background-size: cover;
+            height: 1500px;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 30px;
+        }
+
+        .a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        h4 {
+            font-size: 30px;
+            font-family: 'Times New Roman', Times, serif;
+            color: red;
+        }
+
+        h1 {
+            margin-left: 30px;
+            margin-top: 50px;
+
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        h5 {
+            font-size: 25px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        h2 {
+            color: blue;
+            font-size: 40px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .one {
+            width: 50%;
+            align-items: center;
+            margin-left: 450px;
+            margin-top: 30px;
+        }
+
+        .form-label {
+            padding: 10px;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 25px;
+        }
+
+        input {
+            height: 35px;
+        }
+
+        .blue {
+            width: 30%;
+            background-color: rgb(97, 194, 233);
+        }
+
+        .reviews-container {
+            margin-top: 70px;
+            font-size: 40px;
+        }
+        .m{
+            font-size: 30px;
+        }
+        .center{
+            margin-top:50px;
+            margin-left: 330px;
+        }
+    </style>
+</head>
+<header>
+    {% include 'header.html' %}
+</header>
+
+<body>
+
+
+    <div class="one">
+        <h2 class="center">Profile Details</h2>
+        <form method="post" class="my-form" id="myForm">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="id_username" class="form-label">Username:</label>
+                {{ form.user }}
+
+            </div>
+            <div class="mb-3">
+                <label for="id_bio" class="form-label">Bio-Data:</label>
+                {{form.bio}}
+            </div>
+            <div class="mb-3">
+                <label for="id_email" class="form-label">Email:</label>
+                {{form.email}}
+            </div>
+            <div class="mb-3">
+                <label for="id_phone" class="form-label">Phone:</label>
+                {{form.phone}}
+
+            </div>
+            <div class="mb-3">
+                <label for="id_address" class="form-label">Address:</label>
+                {{form.address}}
+
+            </div>
+
+            <div class="d-grid gap-2">
+                <button type="submit" class="blue">Submit</button>
+            </div>
+        </form>
+    </div>
+
+
+    <script>
+        document.getElementById('myForm').addEventListener('submit', function () {
+            location.reload();
+        });
+    </script>
+
+
+    <center>
+
+        <div class="reviews-container">
+            <h2>Profile Page</h2>
+            {% if ca %}
+
+            <div class="review-item">
+
+                <div class="a">
+                    <h4>Username:</h4>
+                    <h5> {{ ca.user.username}}</h5>
+                </div>
+                <div class="a">
+                    <h4>Bio-Data:</h4>
+                    <h5> {{ ca.bio }}</h5>
+                </div>
+                <div class="a">
+                    <h4>Email: </h4>
+                    <h5>{{ ca.email }}</h5>
+                </div>
+                <div class="a">
+                    <h4>Phone:</h4>
+                    <h5>{{ ca.phone }}</h5>
+                </div>
+                <div class="a">
+                    <h4>Address:</h4>
+                    <h5>{{ ca.address }}</h5>
+                </div>
+
+            </div>
+            {% endif %}
+        </div>
+     
+    </center>
+
+
+
+
+</body>
+
+</html>
+<footer>
+    {% include 'footer.html' %}
+</footer>

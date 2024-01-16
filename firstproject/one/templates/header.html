@@ -1,0 +1,108 @@
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <li class="nav-song">
+          <img src="/home/sss.png" width="50" height="50">
+          <a class="nav-link" aria-current="page">StarSongs</a>
+
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="{% url 'a' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="{% url 'profile' %}">Profile</a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="{% url 'f'%}">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'e' %}">Help</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'c' %}">Review</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'd' %}">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'register' %}">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'login' %}">login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'logout' %}">logout</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link"  href="">{{request.user}}</a>
+        </li>
+        <form style="align-items: center" class="d-flex" method=GET action="{% url 'search' %}">
+          {%csrf_token%}
+          <input style="padding: 5px 5px;background-color:white;
+            border: 2px solid rgba(1, 49, 49, 0.973);
+            color:rgba(1, 49, 49, 0.973);" type="text" placeholder="Search" name="searched">
+          <button style="margin: 8px 2px; padding: 5px 5px;
+            text-align: center;background-color: black;
+        border: none;
+        color:rgb(241, 252, 254);" class="btn btn-outline-secondary" type="submit">Search</button>
+        </form>
+      
+    </div>
+  </div>
+</nav>
+<style>
+  .container-fluid {
+    background-color: blue;
+    color: white;
+    font-size: 23px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  .flex {
+    width: 300px;
+    padding: 10px;
+
+  }
+
+  .nav-item {
+    padding: 10px;
+    color: white;
+    text-align: center;
+  }
+
+  .button {
+    background-color: blue;
+    text-align: center;
+    padding: 16px;
+  }
+
+  .last {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-left: 650px;
+  }
+
+  .nav-link {
+    color: white;
+  }
+
+  .nav-song {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+  }
+  a{
+    font-size: 30px;
+  }
+</style>
